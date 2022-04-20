@@ -28,12 +28,12 @@ const App = () => {
     const today = new Date();
     const date = `${today.getFullYear()}-${
       today.getMonth() + 2 < 10
-        ? `1${today.getMonth() + 1}`
+        ? `0${today.getMonth() + 1}`
         : today.getMonth() + 2
     }-${today.getDate()}`;
 
     fetch(
-      `https://eapi.enetpulse.com/event/fixtures/?username=brobetapiusr&language_typeFK=41&token=9851ce958d2c588be4eba8597b9d0750&sportFK=1&includeEventProperties=no&tf=d-m-Y H:i:s&date=2022-02-26`
+      `https://eapi.enetpulse.com/event/fixtures/?username=brobetapiusr&language_typeFK=41&token=9851ce958d2c588be4eba8597b9d0750&sportFK=1&includeEventProperties=no&tf=d-m-Y H:i:s&date=${date}`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -70,4 +70,7 @@ const App = () => {
     </div>
   );
 };
+window.setTimeout(function () {
+  window.location.reload();
+}, 35000);
 export default App;
