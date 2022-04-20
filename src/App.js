@@ -72,5 +72,5 @@ const App = () => {
 };
 window.setTimeout(function () {
   window.location.reload();
-}, 35000);
+}, 55000);
 export default App;
